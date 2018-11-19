@@ -7,6 +7,7 @@ ig.module('game.entities.enemy')
 		maxVel:{x:1000,y:1000},
 		size:{x:92,y:105},
 		zIndex:1,
+		gravityFactor:0,
 		animSheet:new ig.AnimationSheet('media/assets/enemy.png',92,105),
 		init:function(x,y,settings){
 			this.parent(x,y,settings);
@@ -15,15 +16,9 @@ ig.module('game.entities.enemy')
 		},
 		update:function(){
 			this.parent();
-			if(this.pos.y > ig.system.height-this.size.y-ig.game.tileImage.height){
-				this.pos.y = ig.system.height -this.size.y-ig.game.tileImage.height;
-				this.onGround=true;
-			}else{
-				this.onGround=false;
-			}
-			if(this.onGround){
-				this.vel.x=-250;
-			}
+
+			this.vel.x=-250;
+			
 			if(this.pos.x+this.size.x<0){
 				this.kill();
 			}
