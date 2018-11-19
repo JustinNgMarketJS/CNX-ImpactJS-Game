@@ -1,3 +1,6 @@
+# CNX Game
+This is a simple project to share using ImpactJS for students
+
 # Impact
 
 Impact is an HTML5 Game Engine. More info & documentation: http://impactjs.com/
