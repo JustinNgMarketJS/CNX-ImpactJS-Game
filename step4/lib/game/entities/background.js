@@ -22,8 +22,11 @@ ig.module('game.entities.background')
 			this.image.draw(currX, this.pos.y);
 			this.image.draw(currX+this.size.x,this.pos.y);
 
+			var offsetY = this.size.y-ig.game.tileImage.height;
 			for(var i=0;i<20;i++){
-				ig.game.tileImage.draw(currX + (i*ig.game.tileImage.height),this.pos.y+this.size.y-ig.game.tileImage.height);
+				var x=currX + (i*ig.game.tileImage.height);
+				var y=this.pos.y+offsetY;
+				ig.game.tileImage.draw(x,y);
 			}
 		},
 		setSpeed:function(speed){
