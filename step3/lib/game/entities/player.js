@@ -12,7 +12,7 @@ ig.module('game.entities.player')
 		init:function(x,y,settings){
 			this.parent(x,y,settings);
 			this.addAnim('jump',1,[0]);
-			this.addAnim('run',0.1,[2,3]);
+			this.addAnim('run',0.1,[1,2]);
 		},
 		update:function(){
 			this.parent();

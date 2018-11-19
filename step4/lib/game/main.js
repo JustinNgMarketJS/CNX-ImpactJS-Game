@@ -35,6 +35,7 @@ MyGame = ig.Game.extend({
 		// Update all entities and backgroundMaps
 		this.parent();
 		if(this.bg){
+			this.bg.setSpeed(200);
 			if(this.enemyTimer && this.enemyTimer.delta()>5){
 				var enemySizeY=105;
 
