@@ -12,7 +12,7 @@ ig.module('game.entities.player')
 		init:function(x,y,settings){
 			this.parent(x,y,settings);
 			this.addAnim('jump',1,[0]);
-			this.addAnim('run',0.1,[1,2]);
+			this.addAnim('run',0.1,[2,1]);
 		},
 		update:function(){
 			this.parent();
@@ -56,7 +56,7 @@ ig.module('game.entities.player')
 				this.setState('jump');
 			}else if(this.vel.y>0 && !this.onGround){
 				this.setState('jump');
-			}else{
+			}else if(this.onGround){
 				this.setState('run');
 			}
 		},

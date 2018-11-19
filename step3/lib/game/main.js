@@ -17,7 +17,7 @@ MyGame = ig.Game.extend({
 	start:false,
 	enemyTimer:null,
 	tileImage:new ig.Image("media/assets/tile.png"),
-	resetTimer:null,
+	
 	end:false,
 	init: function(){
 		this.enemyTimer=new ig.Timer();
@@ -34,20 +34,12 @@ MyGame = ig.Game.extend({
 		if(this.bg){
 			this.bg.setSpeed(200);
 			if(this.enemyTimer && this.enemyTimer.delta()>5){
+				var enemySizeY=105;
 				ig.game.spawnEntity(EntityEnemy,640,480-enemySizeY-this.tileImage.height);
 				ig.game.sortEntitiesDeferred();
 				this.enemyTimer.reset();
 			}
-			if(this.end && this.resetTimer == null){
-				this.resetTimer = new ig.Timer();
-			}
-			if(this.resetTimer &&
-  				this.resetTimer.delta()>1){
-  				//Reset the game
-  				ig.system.setGame( MyGame );
-  				this.enemyTimer=null;
-  				this.resetTimer=null;
-			}
+			
 
 			if(!this.start && this.player.onGround){
 				this.player.run();
