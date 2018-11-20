@@ -56,7 +56,7 @@ ig.module('game.entities.player')
 				this.setState('jump');
 			}else if(this.vel.y>0 && !this.onGround){
 				this.setState('jump');
-			}else if(this.onGround){
+			}else{
 				this.setState('run');
 			}
 		},
