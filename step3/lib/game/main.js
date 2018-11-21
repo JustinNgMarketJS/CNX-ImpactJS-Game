@@ -31,6 +31,9 @@ MyGame = ig.Game.extend({
 	update: function() {
 		// Update all entities and backgroundMaps
 		this.parent();
+		if(ig.input.pressed('jump')){
+			console.log('jump')
+		}
 		if(this.bg){
 			this.bg.setSpeed(200);
 			if(this.enemyTimer && this.enemyTimer.delta()>5){
