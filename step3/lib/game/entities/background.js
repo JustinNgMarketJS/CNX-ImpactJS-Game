@@ -25,7 +25,7 @@ ig.module('game.entities.background')
 
 			var offsetY = this.size.y-ig.game.tileImage.height;
 			for(var i=0;i<20;i++){
-				var x=currX + (i*ig.game.tileImage.height);
+				var x=currX + (i*ig.game.tileImage.width);
 				var y=this.pos.y+offsetY;
 				ig.game.tileImage.draw(x,y);
 			}
